@@ -1,3 +1,5 @@
+import { BtnGoToUp } from "./btnUp";
+import { Footer } from "./footer";
 import { Header } from "./header";
 
 export function Layout({ children }: { children: React.ReactNode }) {
@@ -7,6 +9,8 @@ export function Layout({ children }: { children: React.ReactNode }) {
     >
       <Header />
       {children}
+      <BtnGoToUp />
+      <Footer />
     </main>
   );
 }
