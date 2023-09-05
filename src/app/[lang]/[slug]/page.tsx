@@ -4,6 +4,8 @@ import ReactMarkdown from "react-markdown";
 import { PostCard } from "../components/cardPost";
 import { Metadata } from "next";
 
+export const revalidate = 3600;
+
 export async function generateStaticParams() {
   const posts = await getAllPublished();
 

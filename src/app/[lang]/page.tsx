@@ -7,6 +7,8 @@ import { Metadata } from "next";
 import { getDictionary } from "@/utils/getDictionary";
 import { CustomLink } from "@/components/CustomLink";
 
+export const revalidate = 3600 
+
 export const metadata: Metadata = {
   title: "Home",
 };
