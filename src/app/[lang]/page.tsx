@@ -4,14 +4,20 @@ import { PostCard } from "./components/cardPost";
 import Link from "next/link";
 import { Tags } from "@/components/tag";
 import { Metadata } from "next";
+import { getDictionary } from "@/utils/getDictionary";
 
 export const metadata: Metadata = {
   title: "Home",
 };
 
-export default async function Home() {
+export default async function Home({
+  params: { lang },
+}: {
+  params: { lang: "pt" | "en" };
+}) {
   const posts = await getAllPublished();
   const highlightPost = await getHighlightPublished();
+  const dict = getDictionary(lang);
 
   return (
     <main className="min-h-screen container">
@@ -45,7 +51,7 @@ export default async function Home() {
                 {highlightPost.title}
               </h1>
             </Link>
-            <Tags tags={highlightPost.tags} />
+            <Tags tags={highlightPost.tags} lang={lang} />
 
             <p className="mt-4">{highlightPost.description}</p>
           </section>
@@ -54,16 +60,16 @@ export default async function Home() {
 
       <div className="w-full h-[1px] bg-indigo-500 my-10" />
 
-      <PostCard posts={posts} tag="Noticias" />
+      <PostCard title={dict.news} posts={posts} tag="Noticias" />
       <div className="w-full h-[1px] bg-indigo-500 my-10" />
 
-      <PostCard posts={posts} tag="Economia" />
+      <PostCard title={dict.economy} posts={posts} tag="Economia" />
       <div className="w-full h-[1px] bg-indigo-500 my-10" />
 
-      <PostCard posts={posts} tag="Ciencia" />
+      <PostCard title={dict.science} posts={posts} tag="Ciencia" />
       <div className="w-full h-[1px] bg-indigo-500 my-10" />
 
-      <PostCard posts={posts} tag="Tecnologia" />
+      <PostCard title={dict.technology} posts={posts} tag="Tecnologia" />
     </main>
   );
 }

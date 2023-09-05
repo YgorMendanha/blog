@@ -53,7 +53,7 @@ export async function generateMetadata({
 export default async function SinglePost({
   params,
 }: {
-  params: { slug: string };
+  params: { slug: string; lang: "pt" | "en" };
 }) {
   const posts = await getAllPublished();
   const post = await getSinglePost(params.slug);
@@ -65,7 +65,7 @@ export default async function SinglePost({
           <b>{post.metadata.title}</b>
         </h2>
         <span className="mb-10">{post.metadata.date}</span>
-        <Tags className="my-5" tags={post.metadata.tags} />
+        <Tags lang={params.lang} className="my-5" tags={post.metadata.tags} />
         <ReactMarkdown className="">{post.markdown.parent}</ReactMarkdown>
       </section>
       <section>

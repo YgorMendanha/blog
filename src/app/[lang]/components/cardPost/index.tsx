@@ -5,11 +5,11 @@ import Link from "next/link";
 export function PostCard({
   posts,
   tag,
-  title = tag,
+  title,
 }: {
   posts: PostInterface[];
   tag?: "Tecnologia" | "Ciencia" | "Economia" | "Noticias";
-  title?: string;
+  title: string;
 }) {
   return (
     <>

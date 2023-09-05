@@ -44,13 +44,21 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
+  params,
 }: {
   children: React.ReactNode;
+  params: { lang: "en" | "pt" };
 }) {
+  let lang: "pt-BR" | "en-US" = "pt-BR";
+  if (params.lang === "en") {
+    lang = "en-US";
+  } else if (params.lang === "pt") {
+    lang = "pt-BR";
+  }
   return (
-    <html lang="en">
+    <html lang={lang}>
       <body className={`${kan.variable} ${dos.variable}`}>
-        <Layout>{children}</Layout>
+        <Layout lang={params.lang}>{children}</Layout>
       </body>
     </html>
   );

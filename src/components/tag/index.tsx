@@ -1,17 +1,23 @@
+import { getDictionary } from "@/utils/getDictionary";
+
 export function Tags({
   tags,
   className = "",
+  lang,
 }: {
   tags: string[];
   className?: string;
+  lang: "pt" | "en";
 }) {
+  const dict = getDictionary(lang);
+
   function renderTag(tag: string, idx: number) {
     switch (tag) {
       case "Noticias":
         return (
           <small key={idx}>
             <b className="mr-2 p-1 px-2 rounded-2xl bg-indigo-200 text-indigo-950">
-              Noticias
+              {dict.news}
             </b>
           </small>
         );
@@ -19,7 +25,7 @@ export function Tags({
         return (
           <small key={idx}>
             <b className="mr-2 p-1 px-2 rounded-2xl bg-yellow-200 text-indigo-950">
-              Economia
+              {dict.economy}
             </b>
           </small>
         );
@@ -27,7 +33,7 @@ export function Tags({
         return (
           <small key={idx}>
             <b className="mr-2 p-1 px-2 rounded-2xl bg-indigo-400 text-gray-50">
-              Ciencia
+              {dict.science}
             </b>
           </small>
         );
@@ -35,7 +41,7 @@ export function Tags({
         return (
           <small key={idx}>
             <b className="mr-2 p-1 px-2 rounded-2xl bg-gray-500 text-gray-50">
-              Tecnologia
+              {dict.technology}
             </b>
           </small>
         );
@@ -43,7 +49,7 @@ export function Tags({
         return (
           <small key={idx}>
             <b className="mr-2 p-1 px-2 rounded-2xl bg-orange-400 text-gray-50">
-              Destaque
+              {dict.emphasis}
             </b>
           </small>
         );

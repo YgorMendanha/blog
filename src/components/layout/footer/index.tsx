@@ -1,7 +1,9 @@
+import { getDictionary } from "@/utils/getDictionary";
 import { AiFillInstagram } from "react-icons/ai";
 import { BsFacebook, BsYoutube } from "react-icons/bs";
 
-export function Footer() {
+export function Footer({ lang }: { lang: "pt" | "en" }) {
+  const dict = getDictionary(lang);
   return (
     <footer className="w-full mt-10 flex md:flex-row flex-col p-2 px-5 border-t-2 border-indigo-500">
       <small className="flex flex-1">
@@ -16,7 +18,7 @@ export function Footer() {
       </small>
       <small className="flex flex-1">
         <b className="m-auto text-sm md:text-base md:text-right text-center">
-          Y.M. Desenvolvimento © 2023. Todos os direitos reservados.
+          {dict.allRightsReserved}
         </b>
       </small>
     </footer>
