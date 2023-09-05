@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     title: "Blog",
     description:
       "Exemplo de Blog desenvolvido para o portifolio do Ygor Mendanha",
-    url: "https://finesse-store.vercel.app/",
+    url: "blogymdevelopment.vercel.app",
     siteName: "Blog",
     type: "website",
   },

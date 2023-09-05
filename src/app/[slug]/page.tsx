@@ -29,7 +29,7 @@ export async function generateMetadata({
     openGraph: {
       title: "Blog",
       description: post.metadata.description,
-      url: "https://finesse-store.vercel.app/",
+      url: "blogymdevelopment.vercel.app",
       siteName: "Blog",
       images: [
         {
