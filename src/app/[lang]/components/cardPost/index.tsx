@@ -1,6 +1,6 @@
+import { CustomLink } from "@/components/CustomLink";
 import { PostInterface } from "@/types";
 import Image from "next/image";
-import Link from "next/link";
 
 export function PostCard({
   posts,
@@ -20,7 +20,7 @@ export function PostCard({
         {posts.map(
           (post) =>
             post.tags.find((t) => t === tag) && (
-              <Link href={`/${post.slug}`} key={post.id}>
+              <CustomLink href={`/${post.slug}`} key={post.id}>
                 <div className="m-5 w-[210px]">
                   <div className="relative w-[210px] h-[120px]">
                     {post.banner.type === "external" && (
@@ -49,7 +49,7 @@ export function PostCard({
                     <small>{post.date}</small>
                   </p>
                 </div>
-              </Link>
+              </CustomLink>
             )
         )}
       </div>

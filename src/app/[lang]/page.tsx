@@ -1,10 +1,11 @@
 import { getAllPublished, getHighlightPublished } from "@/lib/notion";
 import Image from "next/image";
 import { PostCard } from "./components/cardPost";
-import Link from "next/link";
+
 import { Tags } from "@/components/tag";
 import { Metadata } from "next";
 import { getDictionary } from "@/utils/getDictionary";
+import { CustomLink } from "@/components/CustomLink";
 
 export const metadata: Metadata = {
   title: "Home",
@@ -23,7 +24,7 @@ export default async function Home({
     <main className="min-h-screen container">
       {highlightPost && (
         <section className="flex w-full flex-col 2xl:flex-row justify-between">
-          <Link href={`/${highlightPost.slug}`}>
+          <CustomLink href={`/${highlightPost.slug}`}>
             <div className="mx-auto 2xl:mx-0 m-5 mb-5 relative  w-[250px] h-[100px] min-[400px]:w-[350px] min-[300px]:h-[200px]  min-[550px]:w-[500px] min-[550px]:h-[300px] md:w-[700px] md:h-[400px]">
               {highlightPost.banner.type === "external" && (
                 <Image
@@ -43,14 +44,14 @@ export default async function Home({
                 />
               )}
             </div>
-          </Link>
+          </CustomLink>
 
           <section className="w-full 2xl:w-1/2">
-            <Link href={`/${highlightPost.slug}`}>
+            <CustomLink href={`/${highlightPost.slug}`}>
               <h1 className="text-2xl md:text-5xl font-bold mb-8">
                 {highlightPost.title}
               </h1>
-            </Link>
+            </CustomLink>
             <Tags tags={highlightPost.tags} lang={lang} />
 
             <p className="mt-4">{highlightPost.description}</p>
