@@ -3,6 +3,11 @@ import Image from "next/image";
 import { PostCard } from "./components/cardPost";
 import Link from "next/link";
 import { Tags } from "@/components/tag";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Home",
+};
 
 export default async function Home() {
   const posts = await getAllPublished();
