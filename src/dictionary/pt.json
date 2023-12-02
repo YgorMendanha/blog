@@ -4,5 +4,8 @@
   "science": "Ciencia",
   "technology": "Tecnologia",
   "emphasis": "Destaque",
-  "allRightsReserved": "Y.M. Desenvolvimento © 2023. Todos os direitos reservados."
+  "allRightsReserved": "Y.M. Desenvolvimento © 2023. Todos os direitos reservados.",
+  "metatags": {
+    "description": "Exemplo de Blog desenvolvido para o portifolio do Ygor Mendanha"
+  }
 }
